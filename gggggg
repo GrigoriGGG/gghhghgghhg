@@ -1,0 +1,12 @@
+
+
+import random
+
+word  =  int(input("g"))
+ 
+emojis = "+-/*!&$#?=@abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+pasword = ''
+
+for i in range(word):
+   pasword += random.choise (emojis)
+print (pasword)
