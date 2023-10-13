@@ -1,12 +1,25 @@
+import discord
+from discord.ext import commands
 
+intents = discord.Intents.default()
+intents.message_content = True
 
-import random
+bot = commands.Bot(command_prefix='$', intents=discord.Intents.default())
 
-word  =  int(input("g"))
- 
-emojis = "+-/*!&$#?=@abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
-pasword = ''
+@bot.event
+async def on_ready():
+    print(f'We have logged in as {bot.user}')
 
-for i in range(word):
-   pasword += random.choise (emojis)
-print (pasword)
+@bot.command()
+async def helol(ctx):
+    await ctx.send(f'Привет! Я бот {bot.user}!')
+
+@bot.command()
+async def heh(ctx, count_heh = 5):
+    await ctx.send("he" * count_heh)
+@bot.command()
+async def  тильт(ctx):
+    await ctx.send("я не знаю мотеваЩионых РЕЧЕЙ " * count_heh)
+async def   нигер(ctx):
+    await ctx.send("иди ты расист, ОСYЖДАЮ " * count_heh)   
+bot.run("MTE2MDg5NzE3ODgxOTEyMTE1Mw.GzAxsA.mUKa0xYV1fBLNQa5Y6HJaZSAHXDNXgFOCQfWyw")
